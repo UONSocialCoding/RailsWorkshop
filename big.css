@@ -36,13 +36,36 @@ em {
   font-style: normal;
 }
 
+code, pre {
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 75%;
+  padding: 0.12em 0;
+  border-radius: 0.1em;
+}
+
+code {
+  white-space: pre-wrap;
+}
+
+code em, pre em {
+  color: #f39c12;
+}
+
+pre:not(.flat):before, pre:not(.flat):after, code:before, code:after {
+  content: '\00a0';
+}
+
+pre.flat {
+  padding: 0.12em 0.3em;
+}
+
 .dark {
   background: #272c32;
   color: #fff;
 }
 
 .dark em {
-  color: #fadb03;
+  color: #f39c12;
 }
 
 .light a {

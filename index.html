@@ -7,18 +7,178 @@
   <link href='big.css' rel='stylesheet' type='text/css' />
   <link href='highlight.css' rel='stylesheet' type='text/css' />
   <style>
-    .new-shiny { background: #aaaaaa; }
+    .new-shiny { 
+      background: #aaaaaa; 
+    }
   </style>
   <script src='big.js'></script>
   <script src='highlight.js'></script>
   <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body class='dark'>
+  <div><a href="https://uonsocialcoding.github.io/RailsWorkshop">uonsocialcoding.github.io/RailsWorkshop</a></div>
+
+  <div>Welcome! ❤️</div>
+
   <div>
-    <a href="https://uonsocialcoding.github.io/RailsWorkshop">uonsocialcoding.github.io/RailsWorkshop</a>
+    Today we'll be discussing:
+    <ul>
+      <li>Ruby</li>
+      <li>Rails</li>
+      <li><em>Writing production code</em></li>
+    </ul>
   </div>
+
   <div>
-    <img src="./images/rails.png" />
+    There are often multiple ways to write things <em>Ruby</em>
   </div>
+  
+  <div>
+    <pre>trees = <em>%w(chestnut mahogany pine)</em></pre>
+    Is shorthand for
+    <pre>trees = <em>['chestnut', 'mahogany', 'pine']</em></pre>
+  </div>
+
+  <div>
+    Good
+    <pre><em>'</em>Hello, Sean!<em>'</em></pre>
+    <pre><em>"</em>Hello, <em>#{name}</em>!<em>"</em></pre>
+  </div>
+
+  <div>
+    <pre class="flat">cat = 'Whiskers'
+cat.downcase
+puts cat
+<em>=> Whiskers</em></pre>
+  </div>
+
+  <div>
+    <pre class="flat">cat = 'Whiskers'
+cat.downcase!
+puts cat
+<em>=> whiskers</em></pre>
+  </div>
+
+  <div>
+    <pre class="flat">''.empty<em>?</em>
+=> true
+
+''.nil<em>?</em>
+=> false</pre>
+  </div>
+
+  <div>
+    <pre>name = <em>:sean</em></pre>
+    vs
+    <pre>name = <em>'sean'.to_sym</em></pre>
+  </div>
+
+  <div>
+    <pre class="flat">old_hash = <em>{ :apple => 'fruit', :banana => 'vegetable' }</em></pre>
+  </div>
+
+  <div>
+    <pre>new_hash = <em>{ apple: 'fruit', banana: 'vegetable' }</em></pre>
+  </div>
+
+  <div>
+    <pre class="flat">players.each <em>do |player|
+  player.delete
+end</em></pre>
+  </div>
+
+  <div>
+    <pre>players.each <em>{ |player| player.delete }</em></pre>
+  </div>
+
+  <div>
+    <pre>players.each<em>(&:delete)</em></pre>
+  </div>
+
+  <div>
+    Remember that function calls in Ruby <em>do not have to have parentheses</em>
+    <pre>players.each &:delete</pre>
+  </div>
+
+  <div>
+    But you should <em>use parentheses when chaining</em>
+    <pre>Player.find_by(name: 'Sean').delete</pre>
+  </div>
+
+  <div>
+    <pre>Player.where(<em>admin: true, score: 1000</em>).delete_all</pre>
+    vs
+    <pre>Player.where(<em>{ admin: true, score: 1000 }</em>).delete_all</pre>
+  </div>
+
+  <div>
+    <pre class="flat">if player <em>!=</em> 'sean'
+  player.delete
+end</pre>
+  </div>
+
+  <div>
+    <pre class="flat"><em>unless</em> player <em>==</em> 'sean'
+  player.delete
+end</pre>
+  </div>
+
+  <div>
+    <pre>player.delete <em>unless</em> player <em>==</em> 'sean'</pre>
+  </div>
+
+  <div>
+    Some common Ruby pitfalls...
+  </div>
+
+  <div>
+    Can you spot what's wrong?
+    <pre class="flat">a = 0
+loop do
+  a++
+  break if a == 10
+end
+=> <em>undefined method '+@'</em> for nil:NilClass (NoMethodError)</pre>
+  </div>
+
+  <div>
+    <pre class="flat">a = 1
+<em>a += 1</em>
+puts a
+=> 2</pre>
+  </div>
+
+  <div>
+    Can you spot what's wrong?
+    <pre class="flat">a = false
+b = true
+if a
+  puts a
+elseif b
+  puts b
+end
+=> <em>syntax error</em>, unexpected end-of-input</pre>
+  </div>
+
+  <div>
+    <pre class="flat">a = false
+b = true
+if a
+  puts a
+<em>elsif</em> b
+  puts b
+end
+=> true</pre>
+    (This can be written much better! How?)
+  </div>
+
+  <div>
+    Any questions? 🤔
+  </div>
+
+  <div>
+    Onto <em>Rails</em>!
+  </div>
+
 </body>
 </html>
