@@ -35,7 +35,7 @@
   
   <div>
     <pre>trees = <em>%w(chestnut mahogany pine)</em></pre>
-    Is shorthand for
+    vs
     <pre>trees = <em>['chestnut', 'mahogany', 'pine']</em></pre>
   </div>
 
@@ -60,10 +60,14 @@ puts cat
   </div>
 
   <div>
+    Good
     <pre class="flat">''.empty<em>?</em>
 => true
 
-''.nil<em>?</em>
+'octopus'.nil<em>?</em>
+=> false
+
+100.zero<em>?</em>
 => false</pre>
   </div>
 
@@ -178,6 +182,41 @@ end
 
   <div>
     Onto <em>Rails</em>!
+  </div>
+
+  <div>
+    ActiveSupport::Inflector
+    <pre class="flat">'octopus'.<em>pluralize</em>
+=> 'octopi'
+
+'sheep'.<em>pluralize</em>
+=> 'sheep'</pre>
+  </div>
+
+  <div>
+    <pre class="flat">'lucky_pants'.<em>camelize</em>
+=> 'LuckyPants'
+
+'lucky_pants'.<em>humanize</em>
+=> 'Lucky pants'
+
+'lucky_pants'.<em>titleize</em>
+=> 'Lucky Pants'
+
+'LuckyPants'.<em>underscore</em>
+=> 'lucky_pants'
+
+0.<em>ordinalize</em>
+=> '0th'</pre>
+  </div>
+
+  <div>
+    Only in views
+    <pre class="flat"><%= <em>pluralize</em> 1, 'comment' %>
+=> '1 comment'
+
+<%= <em>pluralize</em> 15, 'article' %>
+=> '15 articles'</pre>
   </div>
 
 </body>
