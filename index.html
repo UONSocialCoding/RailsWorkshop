@@ -21,12 +21,36 @@
   <div>Welcome! ❤️</div>
 
   <div>
-    Today we'll be discussing:
+    In this workshop:
     <ul>
-      <li>Ruby</li>
-      <li>Rails</li>
+      <li>Why use Rails?</li>
+      <li>Some Ruby you probably haven't seen yet</li>
       <li><em>Writing production code</em></li>
     </ul>
+  </div>
+
+  <div>
+    What makes Rails the best choice?
+  </div>
+
+  <div>
+    <ul>
+      <li>Ruby + Rails = ❤️</li>
+      <li>Convention over configuration</li>
+    </ul>
+  </div>
+
+  <div data-background-image="./images/arnie.png"></div>
+
+  <div>
+    <ul>
+      <li>Ruby + Rails = ❤️</li>
+      <li>Convention over configuration</li>
+    </ul>
+  </div>
+
+  <div>
+    Rails <em>isn't</em> perfect!
   </div>
 
   <div>
@@ -46,14 +70,14 @@
   </div>
 
   <div>
-    <pre class="flat">cat = 'Whiskers'
+    <pre class="flat">cat = 'WHISKERS'
 cat.downcase
 puts cat
-<em>=> Whiskers</em></pre>
+<em>=> WHISKERS</em></pre>
   </div>
 
   <div>
-    <pre class="flat">cat = 'Whiskers'
+    <pre class="flat">cat = 'WHISKERS'
 cat.downcase!
 puts cat
 <em>=> whiskers</em></pre>
@@ -78,11 +102,16 @@ puts cat
   </div>
 
   <div>
-    <pre class="flat">old_hash = <em>{ :apple => 'fruit', :banana => 'vegetable' }</em></pre>
+    <pre>old_hash = <em>{ :apple => 'fruit', :banana => 'vegetable' }</em></pre>
   </div>
 
   <div>
     <pre>new_hash = <em>{ apple: 'fruit', banana: 'vegetable' }</em></pre>
+  </div>
+
+  <div>
+    <pre class="flat"><em>[[:apple, 'fruit'], [:banana, 'vegetable']]</em>.to_h
+=> { :apple => 'fruit', :banana => 'vegetable' }</pre>
   </div>
 
   <div>
@@ -181,42 +210,40 @@ end
   </div>
 
   <div>
-    Onto <em>Rails</em>!
+    Writing <em>production</em> level code
   </div>
 
   <div>
-    ActiveSupport::Inflector
-    <pre class="flat">'octopus'.<em>pluralize</em>
-=> 'octopi'
-
-'sheep'.<em>pluralize</em>
-=> 'sheep'</pre>
+    Production is <em>scary</em>!
+    <ul>
+      <li>Real people will use your code</li>
+      <li>A small bug can have catastrophic consequences</li>
+      <li>Security vulnerabilities can do real damage</li>
+    </ul>
   </div>
 
   <div>
-    <pre class="flat">'lucky_pants'.<em>camelize</em>
-=> 'LuckyPants'
-
-'lucky_pants'.<em>humanize</em>
-=> 'Lucky pants'
-
-'lucky_pants'.<em>titleize</em>
-=> 'Lucky Pants'
-
-'LuckyPants'.<em>underscore</em>
-=> 'lucky_pants'
-
-0.<em>ordinalize</em>
-=> '0th'</pre>
+    How can we mitigate the badness?
   </div>
 
   <div>
-    Only in views
-    <pre class="flat"><%= <em>pluralize</em> 1, 'comment' %>
-=> '1 comment'
+    Observe! <em>The 7 commandments</em>
+  </div>
 
-<%= <em>pluralize</em> 15, 'article' %>
-=> '15 articles'</pre>
+  <div>
+    1. <em>Write tests and run them</em> before committing
+  </div>
+
+  <div>
+    <ol>
+      <li>Write tests!</li>
+      <li>Write code in branches</li>
+      <li>Use GitHub boards</li>
+      <li>Use continuous integration</li>
+      <li><em>Use code quality tools</em></li>
+      <li>Review each others code</li>
+      <li>Have a staging environment</li>
+    </ol>
   </div>
 
 </body>
