@@ -23,7 +23,7 @@
   <div>
     In this workshop:
     <ul>
-      <li>Why use Rails?</li>
+      <li>Why Rails?</li>
       <li>Some Ruby you probably haven't seen yet</li>
       <li><em>Writing production code</em></li>
     </ul>
@@ -215,11 +215,6 @@ end
 
   <div>
     Production is <em>scary</em>!
-    <ul>
-      <li>Real people will use your code</li>
-      <li>A small bug can have catastrophic consequences</li>
-      <li>Security vulnerabilities can do real damage</li>
-    </ul>
   </div>
 
   <div>
@@ -227,7 +222,7 @@ end
   </div>
 
   <div>
-    Observe! <em>The 7 commandments</em>
+    Observe! <em>The 6 production commandments</em>
   </div>
 
   <div>
@@ -235,15 +230,50 @@ end
   </div>
 
   <div>
+    <pre class="flat">test "username should be present" do
+  blank_username = Player.new(username: '')
+  <em>assert_not</em> blank_username.valid?
+end</pre>
+  </div>
+
+  <div>
+    2. <em>Use branches</em>, and keep their contents atomic
+  </div>
+
+  <div>
+    3. <em>Run Rubocop</em> as much as possible
+  </div>
+
+  <div>
+    4. <em>Don't fight the CI</em> (continuous integration)
+  </div>
+
+  <div data-background-image="./images/hound.png"></div>
+
+  <div data-background-image="./images/codacy.jpeg"></div>
+
+  <div>
+    5. <em>Never</em> push changes directly to production
+  </div>
+
+  <div>
+    6. <em>Review</em> pull requests
+  </div>
+
+  <div>
+    In summary:
     <ol>
-      <li>Write tests!</li>
-      <li>Write code in branches</li>
-      <li>Use GitHub boards</li>
-      <li>Use continuous integration</li>
-      <li><em>Use code quality tools</em></li>
-      <li>Review each others code</li>
-      <li>Have a staging environment</li>
+      <li>Write tests</li>
+      <li>Use branches</li>
+      <li>Run Rubocop</li>
+      <li>Listen to CI</li>
+      <li>Never push to production (directly)</li>
+      <li>Peer reviews</li>
     </ol>
+  </div>
+
+  <div>
+    Any closing questions? 🤔
   </div>
 
 </body>
