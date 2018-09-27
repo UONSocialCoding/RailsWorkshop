@@ -34,33 +34,35 @@
   </div>
 
   <div>
-    <ul>
-      <li>Ruby + Rails = ❤️</li>
-      <li>Convention over configuration</li>
-    </ul>
+    1. <em>Ruby + Rails</em> = ❤️
   </div>
 
   <div data-background-image="./images/arnie.png"></div>
 
   <div>
-    <ul>
-      <li>Ruby + Rails = ❤️</li>
-      <li>Convention over configuration</li>
-    </ul>
+    2. <em>Convention</em> over configuration
   </div>
+
+  <div>
+    3. Fantastic communities
+  </div>
+
+  <div data-background-image="./images/ruby-github.png"></div>
+
+  <div data-background-image="./images/rails-github.png"></div>
+
+  <div data-background-image="./images/rails-guides.png"></div>
 
   <div>
     Rails <em>isn't</em> perfect!
   </div>
 
   <div>
-    There are often multiple ways to write things <em>Ruby</em>
+    Any questions? 🤔
   </div>
-  
+
   <div>
-    <pre>trees = <em>%w(chestnut mahogany pine)</em></pre>
-    vs
-    <pre>trees = <em>['chestnut', 'mahogany', 'pine']</em></pre>
+    Enough Rails, let's talk <em>Rubyisms</em>
   </div>
 
   <div>
@@ -70,35 +72,11 @@
   </div>
 
   <div>
-    <pre class="flat">cat = 'WHISKERS'
-cat.downcase
-puts cat
-<em>=> WHISKERS</em></pre>
+    <pre>trees = <em>['chestnut', 'mahogany', 'pine']</em></pre>
   </div>
 
   <div>
-    <pre class="flat">cat = 'WHISKERS'
-cat.downcase!
-puts cat
-<em>=> whiskers</em></pre>
-  </div>
-
-  <div>
-    Good
-    <pre class="flat">''.empty<em>?</em>
-=> true
-
-'octopus'.nil<em>?</em>
-=> false
-
-100.zero<em>?</em>
-=> false</pre>
-  </div>
-
-  <div>
-    <pre>name = <em>:sean</em></pre>
-    vs
-    <pre>name = <em>'sean'.to_sym</em></pre>
+    <pre>trees = <em>%w[chestnut mahogany pine]</em></pre>
   </div>
 
   <div>
@@ -115,7 +93,17 @@ puts cat
   </div>
 
   <div>
-    <pre class="flat">players.each <em>do |player|
+    <em>Identical!</em>
+    <ol>
+      <li><pre>{ :a => 'b' }</pre></li>
+      <li><pre><em>{ a: 'b' }</em></pre></li>
+      <li><pre>[[:a, 'b']].to_h</pre></li>
+    </ol>
+  </div>
+
+  <div>
+    <pre class="flat">players = [...]
+players.each <em>do |player|
   player.delete
 end</em></pre>
   </div>
@@ -134,30 +122,20 @@ end</em></pre>
   </div>
 
   <div>
-    But you should <em>use parentheses when chaining</em>
+    But you should <em>always use parentheses when chaining</em>
     <pre>Player.find_by(name: 'Sean').delete</pre>
   </div>
 
   <div>
-    <pre>Player.where(<em>admin: true, score: 1000</em>).delete_all</pre>
-    vs
-    <pre>Player.where(<em>{ admin: true, score: 1000 }</em>).delete_all</pre>
-  </div>
-
-  <div>
-    <pre class="flat">if player <em>!=</em> 'sean'
-  player.delete
-end</pre>
-  </div>
-
-  <div>
-    <pre class="flat"><em>unless</em> player <em>==</em> 'sean'
-  player.delete
-end</pre>
-  </div>
-
-  <div>
-    <pre>player.delete <em>unless</em> player <em>==</em> 'sean'</pre>
+    <ul>
+      <li><code>if</code> and <code>unless</code></li>
+      <li>Guard statements</li>
+      <li>Bang and question mark methods</li>
+      <li>Hashes as parameters</li>
+      <li>Symbols</li>
+      <li>DSLs</li>
+      <li>Different kinds of loops</li>
+    </ul>
   </div>
 
   <div>
@@ -187,7 +165,7 @@ puts a
 b = true
 if a
   puts a
-elseif b
+else if b
   puts b
 end
 => <em>syntax error</em>, unexpected end-of-input</pre>
@@ -202,7 +180,23 @@ if a
   puts b
 end
 => true</pre>
-    (This can be written much better! How?)
+  </div>
+
+  <div>
+    Why is the output unexpected?
+    <pre class="flat">[0..2].each do |i|
+  puts "i = #{i}"
+end
+=> "i = 0..2"</pre>
+  </div>
+
+  <div>
+    <pre class="flat"><em>(0..2)</em>.each do |i|
+  puts "i = #{i}"
+end
+=> "i = 0"
+=> "i = 1"
+=> "i = 2"</pre>
   </div>
 
   <div>

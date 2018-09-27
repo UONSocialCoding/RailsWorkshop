@@ -17,7 +17,9 @@ So why is this?
 
 It's difficult to point to any single reason, but I do have I few theories.
 
-Firstly, Rails and Ruby are a match made in heaven. They're both driven by the same philosophies, and are both very well designed. Unlike many languages Ruby is actually enjoyable to write, and it's easy to learn too. Rails is like Terminator 2: it fully realises the landscape of the original, and builds on top of it in a way that would make Arnie proud.
+Firstly, Rails and Ruby are a match made in heaven. They're both driven by the same philosophies, and are both very well designed. 
+
+Ruby is a enjoyable to write, and it's easy to learn too. Rails is like the Terminator sequel: it fully realises the landscape of the original, and builds on top of it in a way that would make Arnie proud.
 
 *Slide*
 
@@ -25,11 +27,37 @@ Firstly, Rails and Ruby are a match made in heaven. They're both driven by the s
 
 *Slide*
 
-Rails has this notion of convention over configuration. I'm sure you've seen it in the Rails guides already, and maybe even heard me rant about it once or twice. There's good reason for this believe me! Rails teaches you good conventions, and so the skills you learn on a Rails app, will apply to any other web engineering setup. Good conventions means easier maintenance, less hair pulling, and a more enjoyable development experience.
+Rails has this notion of convention over configuration. I'm sure you've seen it in the Rails guides already, and maybe even heard me rant about it once or twice. There's good reason for this believe me!
+
+Rails teaches you good conventions, and so the skills you learn on a Rails app, will apply to any other web engineering setup. Good conventions means easier maintenance, less hair pulling, and a more enjoyable development experience all round.
+
+*Slide*
+
+Both Ruby and Rails are known for their great communities.
+
+*Slide*
+
+They each have active repos on GitHub, with thousands of contributors, and update cycles planned well into the future.
+
+...
+
+*Slide*
+
+Active communities means constant updates, and new features to play with.
+
+...
+
+*Slide*
+
+They also have fantastic documentation, covering just about every topic you can imagine. If you're looking to learn more about Rails then the official guides are the best place to start.
 
 *Slide*
 
 Don't get me wrong, Rails has its flaws. But I'm going to help us navigate through them as best I can.
+
+*Slide*
+
+...
 
 *slide*
 
@@ -37,42 +65,113 @@ Don't get me wrong, Rails has its flaws. But I'm going to help us navigate throu
 
 *Slide*
 
-Here we can see two separate ways to create an array of strings. They're identical. 
-
-
-...
-
-
-Notice that in the second array I'm using single quotes. 
-
-*Slide*
-
-The convention in Ruby is to use single quotes for strings unless they have some kind of interpolation or formatting inside them.
+It's conventional in Ruby to use single quotes for strings, unless they have some kind of interpolation or formatting inside them.
 
 ...
 
-*Slide*
-
-The important thing here, is to notice that calling `downcase` on a string only returns the result. It does not modify the string itself. 
+If you're coming from other languages, this is probably pretty unusual.
 
 *Slide*
 
-But when we add an exclamation mark to the end of the method, suddenly our result changes. In Ruby, when a method returns a modification of our original object, it's conventional to make two versions. One with an exclamation mark and one without.
+This is how you create an array in Ruby.
 
-This is something you might want to keep in mind when reading and writing Ruby.
+*Slide*
 
-*Swap repeatedly back and forth between previous slides.*
-
-You may also see this notation from time to time. It's conventional (and strongly encouraged) to use these kinds of methods instead of using double equals.
+And here's another way. There are often multiple ways of achieving things, which can be daunting for newcomers to the language.
 
 ...
 
 *Slide*
 
-Symbols are a concept you don't often come across in programming languages. The only other time I've encountered symbols is in JavaScript, and they're pretty hidden away there. A symbol is like a meaner, leaner version of a string. Internally, Ruby uses symbols to label things like methods and variables. But we can also use them like enumerators, since they're essentially immutable.
+For example, here's one way create a hash. If you're not familiar, hashes are just like dictionaries in Python, or HashMaps in Java: they store key to value relationships.
 
+Here we can see the symbol *apple*, mapping to the string '*fruit*'.
 
+...
 
+*Slide*
+
+A few years ago a newer, slimmer hash syntax was introduced. Both syntaxes are considered valid ways to define a hash, but it's generally recommended to use the newer syntax because it's easier to read, and is more consistent with languages like Python, JavaScript, and JSON.
+
+...
+
+*Slide*
+
+And here's a third, more convoluted way to create hashes with two arrays.
+
+...
+
+*Slide*
+
+Note that all three of these techniques result in identical output. With number 2 being far and away the most common in modern Ruby.
+
+...
+
+*Slide*
+
+You may have come across blocks already, but did you know there are multiple ways to write blocks as well? Here we can see a block denoted by the keywords `do` and `end`.
+
+...
+
+We can simplify this down a bit more.
+
+*Slide*
+
+This is an inline block. It's particularly useful if you only want to execute a single statement. We trade our `do` and `end` keywords for curly braces, and move the whole expression inline.
+
+...
+
+But believe it or not we can take this one step further.
+
+*Slide*
+
+Since the block only calls a single method on each element, we can use a method reference. Obviously this cuts down massively on code size, and in my opinion improves readability as well.
+
+...
+
+There's one last thing we can do here though....
+
+*Slide*
+
+...
+
+*Slide*
+
+...
+
+*Slide*
+
+There are so many more Rubyisms that we could discuss, but I don't want to overload you guys, and I'm sure you'll pick them up along the way. If you do want to know more, you can always Google one of these topics or ask me about it at some point.
+
+...
+
+*Slide*
+
+...
+
+*Slide*
+
+...
+
+*Slide*
+
+Answer: There is no increment operator in Ruby. There is no decrement operator either. You have to use plus equals and minus equals instead.
+
+*Slide*
+
+...
+
+*Slide*
+
+Answer: Else if is written as elsif in Ruby.
+
+*Slide*
+
+...
+
+*Slide*
+
+Answer: If you put a range inside square brackets, your code will be interpreted as a range inside an array. The solution is to swap the brackets for parenthesis. Note that we do actually need parenthesis here, because a single dot has higher operator precedence than a double dot.
 
 
 *Slide*
@@ -109,9 +208,7 @@ In case you're curious what tests look like in Rails, here's a real test I wrote
 
 By atomic, I mean focus on a single feature. If you want to add two separate features, it's best to have two separate branches and two separate pull requests.
 
-This is super important. If you're branches become bloated, it becomes difficult to merge changes, and a nightmare to review. As Adam and I discovered in the final web engineering assignment.
-
-Also, some of the automated tools stop working once pull requests become too large.
+This is super important. If you're branches become bloated, it becomes difficult to merge changes, and a nightmare to review. Also, some of the automated tools stop working once pull requests become too large.
 
 *Slide* 
 
@@ -139,11 +236,11 @@ Believe me, it will bleed.
 
 *Slide*
 
-I'm going to randomly assign two of you to every pull request. If you're assigned to a pull request, it's your job to scour through the proposed changes and provide some feedback.
+I'm going to assign at least one person to every pull request. If you're assigned to a pull request, it's your job to scour through the proposed changes and provide some feedback.
 
 GitHub provides you with some great tools for making suggestions on a line-by-line basis, or providing general feedback.
 
-No pull request will ever be merged if it hasn't been reviewed by people.
+No pull request will ever be merged if it hasn't been reviewed by at least one human.
 
 *Slide*
 
